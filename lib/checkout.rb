@@ -1,5 +1,7 @@
+require 'yaml'
+
 class Checkout
-  PRICE = {001 => 9.25, 002 => 45, 003 => 19.95}
+  PRODUCTS = YAML.load_file './lib/products.yaml'
 
   attr_reader :basket, :total
 
@@ -10,6 +12,6 @@ class Checkout
 
   def scan(item)
     @basket << item
-    @total += PRICE[item]
+    @total += PRODUCTS[item][:price]
   end
 end

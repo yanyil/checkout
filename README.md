@@ -1,2 +1,2 @@
 # Checkout
-[![Coverage Status](https://coveralls.io/repos/github/yyl29/checkout/badge.svg?branch=master)](https://coveralls.io/github/yyl29/checkout?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/yyl29/checkout/badge.svg?branch=master)](https://coveralls.io/github/yyl29/checkout?branch=master) [![Build Status](https://travis-ci.org/yyl29/checkout.svg?branch=master)](https://travis-ci.org/yyl29/checkout)
