@@ -18,4 +18,13 @@ describe 'User Stories' do
     checkout.scan(2)
     expect(checkout.total).to eq 54.25
   end
+
+  # As the marketing team
+  # So that customers have a greater incentive to purchase
+  # I would like to be able to offer promotions
+  it 'offers promotion if you buy 2 or more lavender hearts' do
+    checkout.scan(1)
+    checkout.scan(1)
+    expect(checkout.total).to eq 17
+  end
 end
