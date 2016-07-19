@@ -18,4 +18,12 @@ describe Checkout do
       expect(checkout.basket).to eq [1, 2, 3]
     end
   end
+
+  describe '#total' do
+    it 'gives a total price of the items in basket' do
+      checkout.scan(1)
+      checkout.scan(2)
+      expect(checkout.total).to eq 54.25
+    end
+  end
 end
