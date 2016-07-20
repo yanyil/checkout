@@ -27,4 +27,19 @@ describe 'User Stories' do
     checkout.scan(1)
     expect(checkout.total).to eq 17
   end
+
+  it 'offers promotion if you spend over £60' do
+    checkout.scan(1)
+    checkout.scan(2)
+    checkout.scan(3)
+    expect(checkout.total).to eq 66.78
+  end
+
+  it 'can offer both promotions if you buy 2 or more lavender hears and spend over £60' do
+    checkout.scan(1)
+    checkout.scan(2)
+    checkout.scan(3)
+    checkout.scan(1)
+    expect(checkout.total).to eq 73.76
+  end
 end

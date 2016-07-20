@@ -20,21 +20,16 @@ class Checkout
 
   def total
     @total = @raw_total
-    rules.multibuy_promotion.each do |k, v|
-      @total -= @basket.count(k) * multibuy_discount(k) if multibuy?(k)
-    end
-    @total
+    apply_discounts
+    @total.round(2)
   end
 
   private
 
   attr_reader :rules
 
-  def multibuy?(item)
-    @basket.count(item) >= rules.multibuy_promotion[item][:quantity]
-  end
-
-  def multibuy_discount(item)
-    PRODUCTS[item][:price] - rules.multibuy_promotion[item][:price]
+  def apply_discounts
+    @total -= rules.multibuy_discount(@basket)
+    @total -= rules.minimum_spend_discount(@total)
   end
 end
