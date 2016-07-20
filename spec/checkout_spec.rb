@@ -28,10 +28,10 @@ describe Checkout do
       end
 
       it 'gives a total price of the items in basket' do
-      checkout.scan(1)
-      checkout.scan(2)
-      expect(checkout.total).to eq 54.25
-    end
+        checkout.scan(1)
+        checkout.scan(2)
+        expect(checkout.total).to eq 54.25
+      end
     end
 
     context 'when buying 2 or more lavender hearts' do
@@ -74,7 +74,7 @@ describe Checkout do
         allow(promotional_rules).to receive(:minimum_spend_discount).and_return 8.19
       end
 
-      it 'offers 10% off the purchase' do
+      it 'applies both promotions' do
         checkout.scan(1)
         checkout.scan(2)
         checkout.scan(1)
